@@ -1,3 +1,5 @@
+import * as THREE from "/lib/three.js_github/build/three.module.js"
+
 /* global CANNON,THREE,Detector */
 
 /**
@@ -7,7 +9,7 @@
  * @param {CANNON.World} world
  * @param {object} [options]
  */
-THREE.CannonDebugRenderer = function(scene, world, options){
+function CannonDebugRenderer(scene, world, options){
     options = options || {};
 
     this.scene = scene;
@@ -22,7 +24,7 @@ THREE.CannonDebugRenderer = function(scene, world, options){
     this._cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 10, 10 );
 };
 
-THREE.CannonDebugRenderer.prototype = {
+CannonDebugRenderer.prototype = {
 
     tmpVec0: new CANNON.Vec3(),
     tmpVec1: new CANNON.Vec3(),
@@ -237,3 +239,5 @@ THREE.CannonDebugRenderer.prototype = {
         }
     }
 };
+
+export { CannonDebugRenderer }
